@@ -8,7 +8,7 @@ Thus, systems like this never get their place in real life. We deciding to devel
    A dynamic website incorporating machine learning techniques.
    
    Search options:
-   Search by Ingredients and name
+   Search by Ingredients and name,
    Search by food image
    
 Output: self-generated recipes
@@ -17,9 +17,9 @@ It is a recipe generator system and not a recommender system!!!
 
 **Project modules**
 
-   Authentication
-   preprocessing
-   Recipe by Search
-   Recipe by Image
+   Authentication,
+   preprocessing,
+   Recipe by Search,
+   Recipe by Image,
    Comment
    Admin Panel
