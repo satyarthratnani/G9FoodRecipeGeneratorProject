@@ -1,0 +1,502 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free mobile app HTML landing page template to help you build a great online presence for your app which will convert visitors into users">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>Food Recipe Generator</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+    <link href="http://localhost/Project_ui/face-mask-website/css/bootstrap.css" rel="stylesheet">
+    <link href="http://localhost/Project_ui/face-mask-website/css/fontawesome-all.css" rel="stylesheet">
+    <link href="http://localhost/Project_ui/face-mask-website/css/swiper.css" rel="stylesheet">
+	<link href="http://localhost/Project_ui/face-mask-website/css/magnific-popup.css" rel="stylesheet">
+	<link href="http://localhost/Project_ui/face-mask-website/css/styles.css" rel="stylesheet">
+	<link rel="icon" href="http://localhost/foodwebsitelogo.png">
+	
+	<!-- Favicon  -->
+    <style>
+        .comment {
+          width: 100%;
+          height: 80px;
+          padding: 10px;
+          background-color: #d0e2bc;
+        }
+      </style>
+      <script src="https://kit.fontawesome.com/39a5be764c.js" crossorigin="anonymous"></script>
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+<form action="/homepage/" method="post">
+{% csrf_token %}
+</form>            
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+    
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Leno</a> -->
+
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="index.html"><img src="http://localhost/Project_ui/face-mask-website/images/foodlogo.png" alt="alternative"></a> 
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#preview">DEMO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#details">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href=".slider-2">GALLERY</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#slider-3">COMMENT</a>
+                </li>
+            </ul>
+        </div>
+    </nav> <!-- end of navbar -->
+    <!-- end of navbar -->
+
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="text-container">
+                            <h1>FOOD RECIPE GENERATOR <br><span id="js-rotating">FIND RECIPE BY IMAGE, FIND RECIPE BY SEARCH</span></h1>
+                            <p class="p-large">Upload an image and then find out what food it is and you can also see its recipe. By search you can also find the food recipe. </p>
+                            <a class="btn-solid-lg page-scroll" href="/welcome?id={{data_welcome}}{{id}}">BY IMAGE</a>
+                            <a class="btn-solid-lg page-scroll" href="/recipefinder?id={{data_welcome}}{{id}}">BY SEARCH</a>
+                        </div>
+                    </div> <!-- end of col -->
+                    <div class="col-lg-6">
+                        <div class="image-container">
+                        </div> <!-- end of image-container -->
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of header-content -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+
+    <!-- Testimonials -->
+    <div class="slider-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Card Slider -->
+                    <div class="slider-container">
+                        <div class="swiper-container card-slider">
+                            <div class="swiper-wrapper">
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/11a1.png" h alt="alternative">
+                                        <div class="card-body">
+                                            <p class="testimonial-text">
+                                                First it will detect the food from uploaded image. Then it will generate recipefor detected food.</p>
+                                            <p class="testimonial-author">Search by image</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end of swiper-slide -->
+                                <!-- end of slide -->
+        
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/12a1.png" alt="alternative">
+                                        <div class="card-body">
+                                            <p class="testimonial-text">This module user can search food recipe by just its name.
+                                                This module use spoonacular and Edamama
+                                                to find the best matchingrecipes corresponding to a given food.</p>
+                                            <p class="testimonial-author">Search by name</p>
+                                        </div>
+                                    </div>        
+                                </div> <!-- end of swiper-slide -->
+                                <!-- end of slide -->
+        
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/14a1.png" alt="alternative">
+                                        <div class="card-body">
+                                            <p class="testimonial-text">Previous module also use this module in backend after it recognize the foodname.</p>
+                                            <p class="testimonial-author">Authenticated recipe data</p>
+                                        </div>
+                                    </div>        
+                                </div> <!-- end of swiper-slide -->
+                                <!-- end of slide -->
+                                 <!-- Slide -->
+                                 <div class="swiper-slide">
+                                    <div class="card">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/20a1.jpg" alt="alternative">
+                                        <div class="card-body">
+                                            <p class="testimonial-text">There are only few dataset available which specified to indian food dishes, making our own dataset we add some values. </p>
+                                            <p class="testimonial-author">Indian food specified</p>
+                                        </div>
+                                    </div>        
+                                </div> <!-- end of swiper-slide -->                                  
+                            </div> <!-- end of swiper-wrapper -->
+        
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <!-- end of add arrows -->
+        
+                        </div> <!-- end of swiper-container -->
+                    </div> <!-- end of slider-container -->
+                    <!-- end of card slider -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of slider-1 -->
+    <!-- end of testimonials -->
+    
+   <!-- Video -->
+    <div id="preview" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>DEMO</h2>
+                    <div class="p-heading p-large">Watch the demo video to see how it works! It's easy, fast, and simple with just a couple clicks of a button!</div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Video Preview -->
+                    <div class="image-container">
+                        <div class="video-wrapper">
+                            <a class="popup-youtube" href="http://localhost/finalvideo.mp4" data-effect="fadeIn">
+                                <img class="img-fluid" src="http://localhost/Project_ui/face-mask-website/images/video-frame.jpg" alt="alternative">
+                                <span class="video-play-button">
+                                    <span></span>
+                                </span>
+                            </a>
+                        </div> <!-- end of video-wrapper -->
+                    </div> <!-- end of image-container -->
+                    <!-- end of video preview -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of video -->
+
+    <!-- Features -->
+
+
+    <!-- Details 1 -->
+    <div class="slider-1">
+            </div>
+    <div id="details" class="basic-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>ABOUT PROJECT</h2>
+                    <div class="p-heading p-large">Creator: <br>Satyarth (18IT444)<br> kishan (18IT458)<br> shubham (18IT463)<br> keyur(18IT464)</div>
+                </div> <!-- end of col -->
+            </div>
+            
+                <div class="text-container">
+                    <h4>DESCRIPTION</h4>
+                    	<p>Our objective is to create an application that will assist an end-user tofind the recipe and ingredients of any food by name or an image. Thesteps to be followed are:
+                            <br>
+                            <ul>
+                                <li>To explore various related datasets and perform datapreprocessing in order to extract the desired attributes.</li>
+                                <li>To perform model training using Machine Learning or DeepLearning algorithms to find the food name.</li>
+                                <li> Using spoonacular and Edaman Recipe search & Diet APIs findthe best matching recipes corresponding to a given food .</li>
+                                <li> Find food related information from youtube and other website also show on the feed of the user.</li>
+                            </ul>
+                            </p>
+					<h4>FEATURES</h4>
+						<ul>
+                    		<li>We aim to make a user aware of the various dishes which can be cooked fromavailable set of ingredients or an input image given by a user.
+                                Thus, systems like this never get their place in real life. 
+                            </li>
+                            <li>
+                                We deciding to developeda Recipe Generation model by applying Neural Network on it. The tools used fordeveloping the project are Python, React, CSS, JavaScript & Django.
+                                A dynamic website incorporating machine learning techniques.
+                                Search options:
+                            </li>
+                    			<ul>
+                    				<li>Search by name</li>
+                                    <li>Search by food image</li>
+                    			</ul>
+                    	    </ul>
+					<h4>PROBLEM & SOLUTION</h4>
+						<ul>
+                    		<li><strong>Problem: </strong>Sometimes people are in a state of dilemma that how to make a foodwhich are delicious in taste and don't know about recipe of food item.</li>
+                    		<li><strong>Solution: </strong>we have design one stop solution where you have to just put image ofdish you want to make or just enter the name of that recipe and byproceeding further you would get the steps to make that recipe and youcan also search according to categories this are the reasons whyactually need of this system.</li>
+                    	</ul>
+					<h4>FUTURE PLANS</h4>
+						<ul>
+                    		<li>In future we will add more images in our dataset to get more accuracy. Also add some feature like favourite recipe, comment on post, rating of recipe.
+                            </li>
+                    	</ul>
+					<h4>Reference links</h4>
+						<ul>
+    						<li><a href="#">https://drive.google.com/file/d/1hmTlPcOkwfOeoNdTXCT9RmoCDwN1Tv_j/view?usp=drivesdk </a></li>
+                            <li><a href="#">https://drive.google.com/file/d/1hjfRhq2-lsC-nvK9ZwFA3A1P_x1uSCgX/view?usp=drivesdk</a></li>
+                            <li><a href="#">https://drive.google.com/file/d/1hlID4y4fztegTlr9oVIsugWuhM8XEUgz/view?usp=drivesdk</a></li>
+                    	</ul>
+
+                </div> <!-- end of text-container -->
+
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of details 1 -->
+
+
+    <!-- Screenshots -->
+    <div class="slider-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <!-- Image Slider -->
+                    <div class="slider-container">
+                        <div class="swiper-container image-slider">
+                            <div class="swiper-wrapper">
+                    
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img4.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img4.jpg" height="200px" width="200px" alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img5.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img5.jpg" height="200px" width="200px" alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+                                
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img6.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img6.jpg" height="200px" width="200px" alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img7.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img7.jpg" height="200px" width="200px" alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img8.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img8.jpg" height="200px" width="200px"  alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img9.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img9.jpg" height="200px" width="200px" alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img10.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img10.jpg" height="200px" width="200px" alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img11.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img11.jpg" height="200px" width="200px" alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img12.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img12.jpg" height="200px" width="200px" alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of sli-->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img14.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img14.jpg" height="200px" width="200px" alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img15.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img15.jpg" height="200px" width="200px"  alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img16.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img16.jpg" height="200px" width="200px" alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img17.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img17.jpg" height="200px" width="200px" alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img18.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img18.jpg" height="200px" width="200px" alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img20.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img20.jpg" height="200px" width="200px" alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img21.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img21.jpg" height="200px" width="200px" alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+                                <!-- Slide -->
+                                <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img22.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img22.jpg" height="200px" width="200px"  alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+                                 <!-- Slide -->
+                                 <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img23.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img23.jpg" height="200px" width="200px"  alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+                                 <!-- Slide -->
+                                 <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img24.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img24.jpg" height="200px" width="200px" alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+                                 <!-- Slide -->
+                                 <div class="swiper-slide">
+                                    <a href="http://localhost/Project_ui/face-mask-website/images/img25.jpg" class="popup-link" data-effect="fadeIn">
+                                        <img class="card-image" src="http://localhost/Project_ui/face-mask-website/images/img25.jpg" height="200px" width="200px" s alt="alternative">
+                                    </a>
+                                </div>
+                                <!-- end of slide -->
+                                
+                            </div> <!-- end of swiper-wrapper -->
+
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <!-- end of add arrows -->
+
+                        </div> <!-- end of swiper-container -->
+                    </div> <!-- end of slider-container -->
+                    <!-- end of image slider -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of slider-2 -->
+
+    <div id="slider-3">
+        <div id="details" class="basic-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                    </div> <!-- end of col -->
+                </div>
+                
+                    <div class="text-container">
+                        <center><h2>COMMENTS</h2></center>
+                        <br>
+                        {% for n in myresult %}
+                        <div><i class="fa-solid fa-user"></i><b> {{n.0}}</b></div>
+                        <div><i class="fa-solid fa-comment"></i> {{n.1}}</div>
+                        <div><br></div>
+                        {% endfor %}
+                        <form action="http://localhost/foodsql/comment.php?id={{data_welcome}}{{id}}" method="POST">
+                            <textarea class="comment" placeholder="Type your comment here." name="comment" required></textarea>
+                            <br>
+                            <input type="submit" name="submit" value="Send">
+                          </form> 
+                    </div> <!-- end of text-container -->
+    
+            </div> <!-- end of container -->
+        </div> <!-- end of basic-2 -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of video -->
+    
+    
+    <!-- end of screenshots -->
+    <!-- Scripts -->
+    <script src="http://localhost/Project_ui/face-mask-website/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="http://localhost/Project_ui/face-mask-website/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="http://localhost/Project_ui/face-mask-website/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="http://localhost/Project_ui/face-mask-website/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="http://localhost/Project_ui/face-mask-website/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="http://localhost/Project_ui/face-mask-website/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="http://localhost/Project_ui/face-mask-website/js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
+    <script src="http://localhost/Project_ui/face-mask-website/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="http://localhost/Project_ui/face-mask-website/js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>
