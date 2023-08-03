@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+	*{
+	  padding: 0;
+	  margin: 0;
+	  box-sizing: border-box;
+	}
+	html{
+	  font-family: 'Nunito';
+	  font-size: 12px;
+	}
+	
+	section{
+	  min-height: 100vh;
+	  width: 100%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  padding: 100px 0;
+	  background-color: rgb(26, 26, 27);
+	}
+	.container{
+	  width: 100%;
+	  height: 90%;
+	  max-width: 1200px;
+	  margin: 0 auto;
+	  padding: 20px;
+	}
+	.brand{
+	  text-align: center;
+	  font-size: 4rem;
+	  color: whitesmoke;
+	  margin-bottom: 30px;
+	}
+	form ion-icon{
+	  width: 8%;
+	  font-size: 3rem;
+	  margin-bottom: -8px;
+	  color: rgb(75, 75, 75) ;
+	  display: inline-block;
+	}
+	.search-result{
+	  margin-top: 50px;
+	  width: 100%;
+	  display: grid;
+	  grid-gap: 25px;
+	  grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
+	}
+	.item{
+	  width: 100%;
+	  border-radius: 8px;
+	  background-color: rgb(37, 37, 37);
+	  padding: 15px;
+	  overflow: hidden;
+	}
+	.item img{
+	  width: 100%;
+	  height: 300px;
+	  border-radius: 4px ;
+	}
+	.flex-container{
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	}
+	.search-result .title{
+	  color: whitesmoke;
+	  margin: 20px 10px 0 0;
+	  font-size: 1.8rem;
+	  font-weight: 400;
+	}
+	.view-btn{
+	  text-decoration: none;
+	  text-align: center;
+	  width: 130px;
+	  padding: 10px 0;
+	  background-color: #404041;
+	  color: whitesmoke;
+	  font-size: 1.4rem;
+	  font-weight: 600;
+	  margin-top: 20px;
+	  border-radius: 4px;
+	  align-self:flex-start;
+	}
+	.item-data{
+	  color: whitesmoke;
+	  display: block;
+	  margin-top: 10px ;
+	  font-size: 1.4rem;
+	  letter-spacing: .05rem;
+	  line-height: 2rem;
+	}
+	.container.initial .brand{
+	  font-size: 7rem;
+	}
+	.container.initial form {
+	  max-width: 800px;
+	}
+	.container.initial form input{
+	  padding: 20px;
+	  font-size: 3rem;
+	}
+	
+	@media (max-width: 768px){
+	  .search-result{
+		grid-gap:10px
+	  }
+	  .container.initial .brand{
+		font-size: 4rem;
+	  }
+	  .container.initial form {
+		max-width: 500px;
+	  }
+	  .container.initial form input{
+		padding: 10px;
+		font-size: 2rem;
+	  }
+	}
+	  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free mobile app HTML landing page template to help you build a great online presence for your app which will convert visitors into users">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>Food Detection</title>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+    <link href="http://localhost/face-mask-website/css/bootstrap.css" rel="stylesheet">
+    <link href="C:/wampIT/www/face-mask-website/css/fontawesome-all.css" rel="stylesheet">
+    <link href="http://localhost/face-mask-website/css/swiper.css" rel="stylesheet">
+	<link href="http://localhost/face-mask-website/css/magnific-popup.css" rel="stylesheet">
+	<link href="http://localhost/face-mask-website/css/styles.css" rel="stylesheet">
+
+	<!-- Favicon  -->
+</head>
+<body background="http://localhost/background71.jpg">
+<div class="tab-content" id="lenoTabsContent">
+
+	<!-- Tab -->
+	<div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+		<div class="container">
+			<form action="/external?id={{data_welcome}}{{id}}" method="post">
+					{% csrf_token %}
+			<div class="row">
+				<div class="upload-btn-wrapper">
+					<button class="btn"><i class="far fa-file-image"></i>UPLOAD FILE</button>
+					<input type="file" name="myfile" id="picture" required></input>
+				</div>
+			</div> <!-- end of row -->
+			<div id="converted-image1">
+			</div> <!-- end of row -->
+			<div class="row">
+				<div class="upload-btn-wrapper">
+					<button class="btn" id="submit-image">DETECT FOOD</button>
+				</div>
+			</div> <!-- end of row -->
+			</form>
+		</div> <!-- end of container -->
+	</div> <!-- end of tab-pane -->
+	<!-- end of tab -->
+	</form>
+
+	<!-- Tab -->		
+</div>
+<br>
+<center><img src="http://localhost/food/{{data_external}}{{data2}}" width="400" height="300"></center>
+<center><h3 style="color: black;">{{data_external}}{{data1}}</h3></center>
+<br>
+<br>
+<br>
+<center>
+	<div class="row">
+			<div class="upload-btn-wrapper">
+			<button class="btn" id="submit-image" name="submit">FOOD RECIPES</button>
+			</div>
+	</div>
+</center>
+	<div class="container initial">
+		<div class="search-result">
+		<!-- <div class="item">
+			<img src="./img-1.jpeg" alt="">
+			<div class="flex-container">
+			<h1 class="title">This is a recipe item</h1>
+			<a class="view-btn" href="#">View Recipe</a>
+			</div>
+			<p class="item-data">Calories: 120</p>
+		</div> -->
+		</div>           
+	</div>
+    <!-- Scripts -->
+    <script src="http://localhost/face-mask-website/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="http://localhost/face-mask-website/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="http://localhost/face-mask-website/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="http://localhost/face-mask-website/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="http://localhost/face-mask-website/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="http://localhost/face-mask-website/js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
+    <script src="http://localhost/face-mask-website/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="http://localhost/face-mask-website/js/scripts.js"></script> <!-- Custom scripts -->
+	<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+  <script>
+    const searchForm = document.querySelector('form');
+const searchResultDiv = document.querySelector('.search-result');
+const container = document.querySelector('.container');
+const APP_ID = "bf081e6f";
+const APP_key = "ce197e209c322c17750f6512d883d097";
+// console.log(container)
+fetchAPI();
+
+async function fetchAPI(){
+  const baseURL = `https://api.edamam.com/search?q={{data_external}}{{data3}}&app_id=${APP_ID}&app_key=${APP_key}&from=0&to=20`;
+  const response = await fetch(baseURL); 
+  const data = await response.json();
+  generateHTML(data.hits)
+  console.log(data);
+}
+
+function generateHTML(results){
+  container.classList.remove('initial');
+  let generatedHTML= '';
+  results.map(result => {
+    generatedHTML += `
+      <div class="item">
+        <img src="${result.recipe.image}" alt="img">
+        <div class="flex-container">
+          <h1 class="title">${result.recipe.label}</h1>
+          <a class="view-btn" target="_blank" href="${result.recipe.url}">View Recipe</a>
+        </div>
+        <p class="item-data">Calories: ${result.recipe.calories.toFixed(2)}</p>
+        <p class="item-data">Diet label: ${result.recipe.dietLabels.length > 0 ? result.recipe.dietLabels : 'No Data Found'}</p>
+        <p class="item-data">Health labels: ${result.recipe.healthLabels}</p>
+      </div>
+    `
+  })
+  searchResultDiv.innerHTML = generatedHTML;
+}
+  </script>
+</body>
+</html>
