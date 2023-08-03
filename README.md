@@ -14,3 +14,12 @@ Thus, systems like this never get their place in real life. We deciding to devel
 Output: self-generated recipes
 
 It is a recipe generator system and not a recommender system!!!
+
+**Project modules**
+
+   Authentication
+   preprocessing
+   Recipe by Search
+   Recipe by Image
+   Comment
+   Admin Panel
